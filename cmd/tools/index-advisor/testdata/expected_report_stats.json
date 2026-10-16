@@ -1,0 +1,869 @@
+{
+  "format_version": 1,
+  "inputs": {
+    "log_files": [
+      "access_log.txt"
+    ],
+    "records_total": 73,
+    "records_analyzed": 62,
+    "skipped": [
+      {
+        "reason": "hybrid_search_unsupported",
+        "count": 1
+      },
+      {
+        "reason": "method_out_of_scope",
+        "count": 1
+      },
+      {
+        "reason": "no_filter",
+        "count": 1
+      },
+      {
+        "reason": "not_a_filter_request",
+        "count": 7
+      },
+      {
+        "reason": "request_failed",
+        "count": 1
+      }
+    ]
+  },
+  "fingerprints": [
+    {
+      "db": "default",
+      "collection": "products",
+      "fingerprint": "price < ? and price >= ?",
+      "count": 16,
+      "methods": {
+        "Query": 8,
+        "Search": 8
+      },
+      "time_cost_ms": {
+        "p50": 1.087,
+        "p95": 14.883,
+        "max": 14.883,
+        "samples": 16
+      }
+    },
+    {
+      "db": "default",
+      "collection": "products",
+      "fingerprint": "city == ?",
+      "count": 10,
+      "methods": {
+        "/v2/vectordb/entities/search": 1,
+        "Query": 5,
+        "Search": 4
+      },
+      "time_cost_ms": {
+        "p50": 0.294,
+        "p95": 5.757,
+        "max": 5.757,
+        "samples": 10
+      }
+    },
+    {
+      "db": "default",
+      "collection": "products",
+      "fingerprint": "city in [?]",
+      "count": 6,
+      "methods": {
+        "Query": 4,
+        "Search": 2
+      },
+      "time_cost_ms": {
+        "p50": 0.278,
+        "p95": 2.119,
+        "max": 2.119,
+        "samples": 6
+      }
+    },
+    {
+      "db": "default",
+      "collection": "products",
+      "fingerprint": "in_stock == ? and rating > ?",
+      "count": 6,
+      "methods": {
+        "Query": 3,
+        "Search": 3
+      },
+      "time_cost_ms": {
+        "p50": 0.232,
+        "p95": 2.018,
+        "max": 2.018,
+        "samples": 6
+      }
+    },
+    {
+      "db": "default",
+      "collection": "products",
+      "fingerprint": "array_contains(tags, ?)",
+      "count": 4,
+      "methods": {
+        "Query": 2,
+        "Search": 2
+      },
+      "time_cost_ms": {
+        "p50": 0.3,
+        "p95": 2.003,
+        "max": 2.003,
+        "samples": 4
+      }
+    },
+    {
+      "db": "default",
+      "collection": "products",
+      "fingerprint": "meta[\"brand\"] == ?",
+      "count": 4,
+      "methods": {
+        "Query": 2,
+        "Search": 2
+      },
+      "time_cost_ms": {
+        "p50": 0.496,
+        "p95": 2.112,
+        "max": 2.112,
+        "samples": 4
+      }
+    },
+    {
+      "db": "default",
+      "collection": "products",
+      "fingerprint": "sku like ?%",
+      "count": 4,
+      "methods": {
+        "Query": 2,
+        "Search": 2
+      },
+      "time_cost_ms": {
+        "p50": 0.231,
+        "p95": 1.915,
+        "max": 1.915,
+        "samples": 4
+      }
+    },
+    {
+      "db": "default",
+      "collection": "products",
+      "fingerprint": "price > ?",
+      "count": 3,
+      "methods": {
+        "/v2/vectordb/entities/query": 1,
+        "Search": 2
+      },
+      "time_cost_ms": {
+        "p50": 1.735,
+        "p95": 18.469,
+        "max": 18.469,
+        "samples": 3
+      }
+    },
+    {
+      "db": "default",
+      "collection": "products",
+      "fingerprint": "$meta[\"color\"] == ?",
+      "count": 2,
+      "methods": {
+        "Query": 1,
+        "Search": 1
+      },
+      "time_cost_ms": {
+        "p50": 0.452,
+        "p95": 1.79,
+        "max": 1.79,
+        "samples": 2
+      }
+    },
+    {
+      "db": "default",
+      "collection": "products",
+      "fingerprint": "id in [?]",
+      "count": 2,
+      "methods": {
+        "Query": 1,
+        "Search": 1
+      },
+      "time_cost_ms": {
+        "p50": 0.241,
+        "p95": 1.812,
+        "max": 1.812,
+        "samples": 2
+      }
+    },
+    {
+      "db": "default",
+      "collection": "products",
+      "fingerprint": "meta[\"score\"] > ?",
+      "count": 2,
+      "methods": {
+        "Query": 1,
+        "Search": 1
+      },
+      "time_cost_ms": {
+        "p50": 0.455,
+        "p95": 1.809,
+        "max": 1.809,
+        "samples": 2
+      }
+    },
+    {
+      "db": "default",
+      "collection": "products",
+      "fingerprint": "sku like %?%",
+      "count": 2,
+      "methods": {
+        "Query": 1,
+        "Search": 1
+      },
+      "time_cost_ms": {
+        "p50": 0.26,
+        "p95": 1.748,
+        "max": 1.748,
+        "samples": 2
+      }
+    },
+    {
+      "db": "default",
+      "collection": "products",
+      "fingerprint": "price < ? and price > ?",
+      "count": 1,
+      "methods": {
+        "Query": 1
+      },
+      "time_cost_ms": {
+        "p50": 0.285,
+        "p95": 0.285,
+        "max": 0.285,
+        "samples": 1
+      }
+    }
+  ],
+  "recommendations": [
+    {
+      "rank": 1,
+      "db": "default",
+      "collection": "products",
+      "column": "price",
+      "data_type": "Int64",
+      "action": "create_index",
+      "observed": {
+        "predicates": 20,
+        "op_classes": {
+          "range": 20
+        },
+        "top_fingerprints": [
+          "price < ? and price >= ?",
+          "price > ?",
+          "price < ? and price > ?"
+        ],
+        "time_cost_ms": {
+          "p50": 1.63,
+          "p95": 14.883,
+          "max": 18.469,
+          "samples": 20
+        }
+      },
+      "existing_indexes": [],
+      "candidates": [
+        {
+          "index_type": "INVERTED",
+          "field_name": "price",
+          "serves": [
+            "range"
+          ],
+          "predicates": 20,
+          "reasons": [
+            "point, range and prefix-match filters at any cardinality"
+          ],
+          "conditional": false,
+          "source": "https://milvus.io/docs/scalar_index.md"
+        },
+        {
+          "index_type": "STL_SORT",
+          "field_name": "price",
+          "serves": [
+            "range"
+          ],
+          "predicates": 20,
+          "reasons": [
+            "comparison, range and IN filters on a sorted column"
+          ],
+          "conditional": false,
+          "source": "https://milvus.io/docs/stl-sort.md"
+        }
+      ],
+      "statistics": {
+        "row_count": 5000,
+        "distinct_count": "unknown",
+        "null_fraction": "unknown"
+      },
+      "validation_plan": [
+        "Create the INVERTED index on field \"price\" in a non-production copy of default.products; this tool does not create it.",
+        "Replay `price < ? and price >= ?`, `price > ?`, `price < ? and price > ?` with representative values and compare p50/p95 latency (baseline from 20 logged requests: p50 1.630 ms, p95 14.883 ms).",
+        "Check index build time, memory and disk use, and insert latency before and after.",
+        "Keep the index only if the replay shows a measurable improvement."
+      ]
+    },
+    {
+      "rank": 2,
+      "db": "default",
+      "collection": "products",
+      "column": "in_stock",
+      "data_type": "Bool",
+      "action": "create_index",
+      "observed": {
+        "predicates": 6,
+        "op_classes": {
+          "eq": 6
+        },
+        "top_fingerprints": [
+          "in_stock == ? and rating > ?"
+        ],
+        "time_cost_ms": {
+          "p50": 0.232,
+          "p95": 2.018,
+          "max": 2.018,
+          "samples": 6
+        }
+      },
+      "existing_indexes": [],
+      "candidates": [
+        {
+          "index_type": "BITMAP",
+          "field_name": "in_stock",
+          "serves": [
+            "eq"
+          ],
+          "predicates": 6,
+          "reasons": [
+            "equality and IN filters on a low-cardinality field",
+            "a BOOL field has at most 2 distinct values"
+          ],
+          "conditional": false,
+          "source": "https://milvus.io/docs/bitmap.md"
+        },
+        {
+          "index_type": "INVERTED",
+          "field_name": "in_stock",
+          "serves": [
+            "eq"
+          ],
+          "predicates": 6,
+          "reasons": [
+            "point, range and prefix-match filters at any cardinality"
+          ],
+          "conditional": false,
+          "source": "https://milvus.io/docs/scalar_index.md"
+        }
+      ],
+      "statistics": {
+        "row_count": 5000,
+        "distinct_count": 2,
+        "null_fraction": "unknown"
+      },
+      "validation_plan": [
+        "Create the BITMAP index on field \"in_stock\" in a non-production copy of default.products; this tool does not create it.",
+        "Replay `in_stock == ? and rating > ?` with representative values and compare p50/p95 latency (baseline from 6 logged requests: p50 0.232 ms, p95 2.018 ms).",
+        "Check index build time, memory and disk use, and insert latency before and after.",
+        "Keep the index only if the replay shows a measurable improvement."
+      ]
+    },
+    {
+      "rank": 3,
+      "db": "default",
+      "collection": "products",
+      "column": "rating",
+      "data_type": "Double",
+      "action": "create_index",
+      "observed": {
+        "predicates": 6,
+        "op_classes": {
+          "range": 6
+        },
+        "top_fingerprints": [
+          "in_stock == ? and rating > ?"
+        ],
+        "time_cost_ms": {
+          "p50": 0.232,
+          "p95": 2.018,
+          "max": 2.018,
+          "samples": 6
+        }
+      },
+      "existing_indexes": [],
+      "candidates": [
+        {
+          "index_type": "INVERTED",
+          "field_name": "rating",
+          "serves": [
+            "range"
+          ],
+          "predicates": 6,
+          "reasons": [
+            "point, range and prefix-match filters at any cardinality"
+          ],
+          "conditional": false,
+          "source": "https://milvus.io/docs/scalar_index.md"
+        },
+        {
+          "index_type": "STL_SORT",
+          "field_name": "rating",
+          "serves": [
+            "range"
+          ],
+          "predicates": 6,
+          "reasons": [
+            "comparison, range and IN filters on a sorted column"
+          ],
+          "conditional": false,
+          "source": "https://milvus.io/docs/stl-sort.md"
+        }
+      ],
+      "statistics": {
+        "row_count": 5000,
+        "distinct_count": "unknown",
+        "null_fraction": "unknown"
+      },
+      "validation_plan": [
+        "Create the INVERTED index on field \"rating\" in a non-production copy of default.products; this tool does not create it.",
+        "Replay `in_stock == ? and rating > ?` with representative values and compare p50/p95 latency (baseline from 6 logged requests: p50 0.232 ms, p95 2.018 ms).",
+        "Check index build time, memory and disk use, and insert latency before and after.",
+        "Keep the index only if the replay shows a measurable improvement."
+      ]
+    },
+    {
+      "rank": 4,
+      "db": "default",
+      "collection": "products",
+      "column": "sku",
+      "data_type": "VarChar",
+      "action": "create_index",
+      "observed": {
+        "predicates": 6,
+        "op_classes": {
+          "like_infix": 2,
+          "like_prefix": 4
+        },
+        "top_fingerprints": [
+          "sku like ?%",
+          "sku like %?%"
+        ],
+        "time_cost_ms": {
+          "p50": 0.26,
+          "p95": 1.915,
+          "max": 1.915,
+          "samples": 6
+        }
+      },
+      "existing_indexes": [],
+      "candidates": [
+        {
+          "index_type": "NGRAM",
+          "field_name": "sku",
+          "params": {
+            "max_gram": "3",
+            "min_gram": "2"
+          },
+          "serves": [
+            "like_prefix",
+            "like_infix"
+          ],
+          "predicates": 6,
+          "reasons": [
+            "LIKE and regex filters with literal substrings",
+            "every observed pattern literal has at least 2 characters (shortest: 3)"
+          ],
+          "conditional": false,
+          "source": "https://milvus.io/docs/ngram.md"
+        },
+        {
+          "index_type": "INVERTED",
+          "field_name": "sku",
+          "serves": [
+            "like_prefix"
+          ],
+          "predicates": 4,
+          "reasons": [
+            "point, range and prefix-match filters at any cardinality"
+          ],
+          "conditional": false,
+          "source": "https://milvus.io/docs/scalar_index.md"
+        },
+        {
+          "index_type": "Trie",
+          "field_name": "sku",
+          "serves": [
+            "like_prefix"
+          ],
+          "predicates": 4,
+          "reasons": [
+            "prefix-match filters"
+          ],
+          "conditional": false,
+          "source": "https://milvus.io/docs/index-scalar-fields.md"
+        }
+      ],
+      "statistics": {
+        "row_count": 5000,
+        "distinct_count": 4878,
+        "null_fraction": "unknown"
+      },
+      "validation_plan": [
+        "Create the NGRAM index on field \"sku\" with params max_gram=3, min_gram=2 in a non-production copy of default.products; this tool does not create it.",
+        "Replay `sku like ?%`, `sku like %?%` with representative values and compare p50/p95 latency (baseline from 6 logged requests: p50 0.260 ms, p95 1.915 ms).",
+        "Check index build time, memory and disk use, and insert latency before and after.",
+        "Keep the index only if the replay shows a measurable improvement."
+      ]
+    },
+    {
+      "rank": 5,
+      "db": "default",
+      "collection": "products",
+      "column": "meta[\"brand\"]",
+      "data_type": "JSON path",
+      "action": "create_index",
+      "observed": {
+        "predicates": 4,
+        "op_classes": {
+          "eq": 4
+        },
+        "top_fingerprints": [
+          "meta[\"brand\"] == ?"
+        ],
+        "time_cost_ms": {
+          "p50": 0.496,
+          "p95": 2.112,
+          "max": 2.112,
+          "samples": 4
+        }
+      },
+      "existing_indexes": [],
+      "candidates": [
+        {
+          "index_type": "INVERTED",
+          "field_name": "meta",
+          "params": {
+            "json_cast_type": "VARCHAR",
+            "json_path": "meta[\"brand\"]"
+          },
+          "serves": [
+            "eq"
+          ],
+          "predicates": 4,
+          "reasons": [
+            "filters on one JSON path, indexed with json_path and json_cast_type"
+          ],
+          "conditional": false,
+          "source": "https://milvus.io/docs/scalar_index.md"
+        }
+      ],
+      "statistics": {
+        "row_count": 5000,
+        "distinct_count": 3,
+        "null_fraction": "unknown"
+      },
+      "validation_plan": [
+        "Create the INVERTED index on field \"meta\" with params json_cast_type=VARCHAR, json_path=meta[\"brand\"] in a non-production copy of default.products; this tool does not create it.",
+        "Replay `meta[\"brand\"] == ?` with representative values and compare p50/p95 latency (baseline from 4 logged requests: p50 0.496 ms, p95 2.112 ms).",
+        "Check index build time, memory and disk use, and insert latency before and after.",
+        "Keep the index only if the replay shows a measurable improvement."
+      ]
+    },
+    {
+      "rank": 6,
+      "db": "default",
+      "collection": "products",
+      "column": "tags",
+      "data_type": "Array<VarChar>",
+      "action": "create_index",
+      "observed": {
+        "predicates": 4,
+        "op_classes": {
+          "contains": 4
+        },
+        "top_fingerprints": [
+          "array_contains(tags, ?)"
+        ],
+        "time_cost_ms": {
+          "p50": 0.3,
+          "p95": 2.003,
+          "max": 2.003,
+          "samples": 4
+        }
+      },
+      "existing_indexes": [],
+      "candidates": [
+        {
+          "index_type": "BITMAP",
+          "field_name": "tags",
+          "serves": [
+            "contains"
+          ],
+          "predicates": 4,
+          "reasons": [
+            "array_contains filters on an array with few distinct elements",
+            "distinct_count 5 is below 500"
+          ],
+          "conditional": false,
+          "source": "https://milvus.io/docs/bitmap.md"
+        },
+        {
+          "index_type": "INVERTED",
+          "field_name": "tags",
+          "serves": [
+            "contains"
+          ],
+          "predicates": 4,
+          "reasons": [
+            "array_contains filters"
+          ],
+          "conditional": false,
+          "source": "https://milvus.io/docs/scalar_index.md"
+        }
+      ],
+      "statistics": {
+        "row_count": 5000,
+        "distinct_count": 5,
+        "null_fraction": "unknown"
+      },
+      "validation_plan": [
+        "Create the BITMAP index on field \"tags\" in a non-production copy of default.products; this tool does not create it.",
+        "Replay `array_contains(tags, ?)` with representative values and compare p50/p95 latency (baseline from 4 logged requests: p50 0.300 ms, p95 2.003 ms).",
+        "Check index build time, memory and disk use, and insert latency before and after.",
+        "Keep the index only if the replay shows a measurable improvement."
+      ]
+    },
+    {
+      "rank": 7,
+      "db": "default",
+      "collection": "products",
+      "column": "$meta[\"color\"]",
+      "data_type": "JSON path",
+      "action": "create_index",
+      "observed": {
+        "predicates": 2,
+        "op_classes": {
+          "eq": 2
+        },
+        "top_fingerprints": [
+          "$meta[\"color\"] == ?"
+        ],
+        "time_cost_ms": {
+          "p50": 0.452,
+          "p95": 1.79,
+          "max": 1.79,
+          "samples": 2
+        }
+      },
+      "existing_indexes": [],
+      "candidates": [
+        {
+          "index_type": "INVERTED",
+          "field_name": "color",
+          "params": {
+            "json_cast_type": "VARCHAR"
+          },
+          "serves": [
+            "eq"
+          ],
+          "predicates": 2,
+          "reasons": [
+            "filters on one JSON path, indexed with json_path and json_cast_type"
+          ],
+          "conditional": false,
+          "source": "https://milvus.io/docs/scalar_index.md"
+        }
+      ],
+      "statistics": {
+        "row_count": 5000,
+        "distinct_count": 2,
+        "null_fraction": "unknown"
+      },
+      "validation_plan": [
+        "Create the INVERTED index on field \"color\" with params json_cast_type=VARCHAR in a non-production copy of default.products; this tool does not create it.",
+        "Replay `$meta[\"color\"] == ?` with representative values and compare p50/p95 latency (baseline from 2 logged requests: p50 0.452 ms, p95 1.790 ms).",
+        "Check index build time, memory and disk use, and insert latency before and after.",
+        "Keep the index only if the replay shows a measurable improvement."
+      ]
+    },
+    {
+      "rank": 8,
+      "db": "default",
+      "collection": "products",
+      "column": "meta[\"score\"]",
+      "data_type": "JSON path",
+      "action": "create_index",
+      "observed": {
+        "predicates": 2,
+        "op_classes": {
+          "range": 2
+        },
+        "top_fingerprints": [
+          "meta[\"score\"] > ?"
+        ],
+        "time_cost_ms": {
+          "p50": 0.455,
+          "p95": 1.809,
+          "max": 1.809,
+          "samples": 2
+        }
+      },
+      "existing_indexes": [],
+      "candidates": [
+        {
+          "index_type": "INVERTED",
+          "field_name": "meta",
+          "params": {
+            "json_cast_type": "DOUBLE",
+            "json_path": "meta[\"score\"]"
+          },
+          "serves": [
+            "range"
+          ],
+          "predicates": 2,
+          "reasons": [
+            "filters on one JSON path, indexed with json_path and json_cast_type"
+          ],
+          "conditional": false,
+          "source": "https://milvus.io/docs/scalar_index.md"
+        }
+      ],
+      "statistics": {
+        "row_count": 5000,
+        "distinct_count": "unknown",
+        "null_fraction": "unknown"
+      },
+      "validation_plan": [
+        "Create the INVERTED index on field \"meta\" with params json_cast_type=DOUBLE, json_path=meta[\"score\"] in a non-production copy of default.products; this tool does not create it.",
+        "Replay `meta[\"score\"] > ?` with representative values and compare p50/p95 latency (baseline from 2 logged requests: p50 0.455 ms, p95 1.809 ms).",
+        "Check index build time, memory and disk use, and insert latency before and after.",
+        "Keep the index only if the replay shows a measurable improvement."
+      ]
+    },
+    {
+      "rank": 9,
+      "db": "default",
+      "collection": "products",
+      "column": "city",
+      "data_type": "VarChar",
+      "action": "keep_existing",
+      "observed": {
+        "predicates": 16,
+        "op_classes": {
+          "eq": 10,
+          "in": 6
+        },
+        "top_fingerprints": [
+          "city == ?",
+          "city in [?]"
+        ],
+        "time_cost_ms": {
+          "p50": 0.294,
+          "p95": 5.757,
+          "max": 5.757,
+          "samples": 16
+        }
+      },
+      "existing_indexes": [
+        {
+          "index_name": "city",
+          "index_type": "INVERTED"
+        }
+      ],
+      "candidates": [
+        {
+          "index_type": "BITMAP",
+          "field_name": "city",
+          "serves": [
+            "eq",
+            "in"
+          ],
+          "predicates": 16,
+          "reasons": [
+            "equality and IN filters on a low-cardinality field",
+            "distinct_count 5 is below 500"
+          ],
+          "conditional": false,
+          "source": "https://milvus.io/docs/bitmap.md"
+        },
+        {
+          "index_type": "INVERTED",
+          "field_name": "city",
+          "serves": [
+            "eq",
+            "in"
+          ],
+          "predicates": 16,
+          "reasons": [
+            "point, range and prefix-match filters at any cardinality"
+          ],
+          "conditional": false,
+          "source": "https://milvus.io/docs/scalar_index.md"
+        },
+        {
+          "index_type": "STL_SORT",
+          "field_name": "city",
+          "serves": [
+            "eq",
+            "in"
+          ],
+          "predicates": 16,
+          "reasons": [
+            "comparison, range and IN filters on a sorted column"
+          ],
+          "conditional": false,
+          "source": "https://milvus.io/docs/stl-sort.md"
+        }
+      ],
+      "statistics": {
+        "row_count": 5000,
+        "distinct_count": 5,
+        "null_fraction": 0
+      },
+      "validation_plan": [
+        "On a non-production copy, compare the latency of `city == ?`, `city in [?]` with and without the existing index; its presence alone does not show it is used.",
+        "Compare the existing index type with the candidates below before changing anything; this tool does not alter indexes."
+      ]
+    },
+    {
+      "rank": 10,
+      "db": "default",
+      "collection": "products",
+      "column": "id",
+      "data_type": "Int64",
+      "action": "no_action",
+      "observed": {
+        "predicates": 2,
+        "op_classes": {
+          "in": 2
+        },
+        "top_fingerprints": [
+          "id in [?]"
+        ],
+        "time_cost_ms": {
+          "p50": 0.241,
+          "p95": 1.812,
+          "max": 1.812,
+          "samples": 2
+        }
+      },
+      "existing_indexes": [],
+      "candidates": [],
+      "statistics": {
+        "row_count": 5000,
+        "distinct_count": "unknown",
+        "null_fraction": "unknown"
+      },
+      "notes": [
+        "Primary key: Milvus already maintains a primary-key index."
+      ]
+    }
+  ],
+  "notes": [
+    "Advisory only: this tool never creates, alters or drops an index.",
+    "Existing indexes are listed from metadata; this report does not show whether any query used them.",
+    "Statistics shown as \"unknown\" were not provided with --stats; candidates that depend on them are marked conditional.",
+    "Fingerprints replace every literal with ?; raw expressions, user names, client addresses and trace IDs are not reported."
+  ]
+}

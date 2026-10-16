@@ -1,0 +1,216 @@
+{
+  "format_version": 1,
+  "collections": [
+    {
+      "db": "default",
+      "name": "idx_probe",
+      "schema": {
+        "name": "idx_probe",
+        "fields": [
+          {
+            "fieldID": "100",
+            "name": "id",
+            "is_primary_key": true,
+            "data_type": "Int64"
+          },
+          {
+            "fieldID": "101",
+            "name": "vec",
+            "data_type": "FloatVector",
+            "type_params": [
+              {
+                "key": "dim",
+                "value": "4"
+              }
+            ]
+          },
+          {
+            "fieldID": "102",
+            "name": "meta",
+            "data_type": "JSON"
+          },
+          {
+            "fieldID": "103",
+            "name": "price",
+            "data_type": "Int64"
+          },
+          {
+            "fieldID": "104",
+            "name": "name",
+            "data_type": "VarChar",
+            "type_params": [
+              {
+                "key": "max_length",
+                "value": "32"
+              }
+            ]
+          }
+        ],
+        "enable_dynamic_field": true,
+        "properties": [
+          {
+            "key": "timezone",
+            "value": "UTC"
+          },
+          {
+            "key": "namespace.sharding.enabled",
+            "value": "false"
+          },
+          {
+            "key": "max_field_id",
+            "value": "105"
+          }
+        ],
+        "dbName": "default"
+      },
+      "indexes": [
+        {
+          "index_name": "dyn_color",
+          "field_name": "color",
+          "index_type": "INVERTED",
+          "params": {
+            "json_cast_type": "varchar"
+          }
+        },
+        {
+          "index_name": "meta_brand",
+          "field_name": "meta",
+          "index_type": "INVERTED",
+          "params": {
+            "json_cast_type": "varchar",
+            "json_path": "meta[\"brand\"]"
+          }
+        },
+        {
+          "index_name": "name_ngram",
+          "field_name": "name",
+          "index_type": "NGRAM",
+          "params": {
+            "max_gram": "3",
+            "min_gram": "2"
+          }
+        },
+        {
+          "index_name": "price_sort",
+          "field_name": "price",
+          "index_type": "STL_SORT"
+        }
+      ]
+    },
+    {
+      "db": "default",
+      "name": "products",
+      "schema": {
+        "name": "products",
+        "fields": [
+          {
+            "fieldID": "100",
+            "name": "id",
+            "is_primary_key": true,
+            "data_type": "Int64"
+          },
+          {
+            "fieldID": "101",
+            "name": "vec",
+            "data_type": "FloatVector",
+            "type_params": [
+              {
+                "key": "dim",
+                "value": "8"
+              }
+            ]
+          },
+          {
+            "fieldID": "102",
+            "name": "city",
+            "data_type": "VarChar",
+            "type_params": [
+              {
+                "key": "max_length",
+                "value": "32"
+              }
+            ]
+          },
+          {
+            "fieldID": "103",
+            "name": "sku",
+            "data_type": "VarChar",
+            "type_params": [
+              {
+                "key": "max_length",
+                "value": "32"
+              }
+            ]
+          },
+          {
+            "fieldID": "104",
+            "name": "price",
+            "data_type": "Int64"
+          },
+          {
+            "fieldID": "105",
+            "name": "rating",
+            "data_type": "Double"
+          },
+          {
+            "fieldID": "106",
+            "name": "in_stock",
+            "data_type": "Bool"
+          },
+          {
+            "fieldID": "107",
+            "name": "tags",
+            "data_type": "Array",
+            "type_params": [
+              {
+                "key": "max_length",
+                "value": "16"
+              },
+              {
+                "key": "max_capacity",
+                "value": "4"
+              }
+            ],
+            "element_type": "VarChar"
+          },
+          {
+            "fieldID": "108",
+            "name": "meta",
+            "data_type": "JSON"
+          }
+        ],
+        "enable_dynamic_field": true,
+        "properties": [
+          {
+            "key": "timezone",
+            "value": "UTC"
+          },
+          {
+            "key": "namespace.sharding.enabled",
+            "value": "false"
+          },
+          {
+            "key": "max_field_id",
+            "value": "109"
+          }
+        ],
+        "dbName": "default"
+      },
+      "indexes": [
+        {
+          "index_name": "city",
+          "field_name": "city",
+          "index_type": "INVERTED"
+        },
+        {
+          "index_name": "vec",
+          "field_name": "vec",
+          "index_type": "AUTOINDEX",
+          "params": {
+            "metric_type": "L2"
+          }
+        }
+      ]
+    }
+  ]
+}
